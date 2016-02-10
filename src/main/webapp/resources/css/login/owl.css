@@ -1,312 +1,369 @@
 .lovely-owl {
-  width: 300px;
-  margin: 150px auto;
-  z-index: 4;
+    width: 300px;
+    margin: 150px auto;
+    z-index: 4;
 }
 .lovely-owl .head {
-  width: 200px;
-  height: 120px;
-  border-radius: 50%;
-  background: palevioletred;
-  margin: 3rem auto 0;
-  position: relative;
-  z-index: 150;
+    width: 200px;
+    height: 120px;
+    border-radius: 50%;
+    background: palevioletred;
+    margin: 3rem auto 0;
+    position: relative;
+    z-index: 150;
 }
 .lovely-owl .head:before, .lovely-owl .head:after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 35px solid transparent;
-  border-right: 35px solid transparent;
-  border-bottom: 50px solid palevioletred;
-  position: absolute;
-  z-index: -1;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 50px solid palevioletred;
+    position: absolute;
+    z-index: -1;
 }
 .lovely-owl .head:before {
-  top: -10px;
-  left: -14px;
-  -webkit-transform: rotate(-35deg);
-  transform: rotate(-35deg);
+    top: -10px;
+    left: -14px;
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
 }
 .lovely-owl .head:after {
-  right: -14px;
-  top: -10px;
-  -webkit-transform: rotate(35deg);
-  transform: rotate(35deg);
+    right: -14px;
+    top: -10px;
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
 }
 .lovely-owl .eye {
-  background: #000000;
-  background: -webkit-radial-gradient(center, ellipse cover, #000 36%, #8b3626 36%, #8b3626 38%, #8b3626 50%, #000 50%, #000 60%, #fff 60%, #fff 100%);
-  background: radial-gradient(ellipse at center, #000000 36%, #8b3626 48%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%);
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  position: absolute;
-  top: 13px;
-  animation: eyeAnim 0.5s -0.7s ease infinite;
-  /*  transition: 3s;*/
-  /*  -webkit-transition-property: background;
-  -moz-transition-property: background;
-  -o-transition-property: background;
-  transition-property: background;
-  -webkit-transition-duration: 5s;
-  -moz-transition-duration: 5s;
-  -o-transition-duration: 5s;
-  transition-duration: 5s;
-  -webkit-transition-timing-function: linear;
-  -moz-transition-timing-function: linear;
-  -o-transition-timing-function: linear;
-  transition-timing-function: linear;*/
+    background: #000000;
+    background: -webkit-radial-gradient(center, ellipse cover, #000 36%, #8b3626 36%, #8b3626 38%, #8b3626 50%, #000 50%, #000 60%, #fff 60%, #fff 100%);
+    background: radial-gradient(ellipse at center, #000000 36%, #8b3626 48%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    position: absolute;
+    top: 13px;
+    animation: eyeAnim 0.5s -0.7s ease infinite;
+    /*  transition: 3s;*/
+    /*  -webkit-transition-property: background;
+    -moz-transition-property: background;
+    -o-transition-property: background;
+    transition-property: background;
+    -webkit-transition-duration: 5s;
+    -moz-transition-duration: 5s;
+    -o-transition-duration: 5s;
+    transition-duration: 5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;*/
 }
 
 @keyframes eyeAnim {
-  0% { background: radial-gradient(ellipse at center, #000000 36%, #8b3626 39%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%); }
-  100% { background: radial-gradient(ellipse at center, #000000 36%, #8b3626 40%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%); }
+    0% { background: radial-gradient(ellipse at center, #000000 36%, #8b3626 39%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%); }
+    100% { background: radial-gradient(ellipse at center, #000000 36%, #8b3626 40%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%); }
 }
 
 .lovely-owl .eye.eye-l {
-  left: 10px;
+    left: 10px;
     -webkit-transition-property: background;
-       -moz-transition-property: background;
-         -o-transition-property: background;
-            transition-property: background;
+    -moz-transition-property: background;
+    -o-transition-property: background;
+    transition-property: background;
     -webkit-transition-duration: 3s;
-       -moz-transition-duration: 3s;
-         -o-transition-duration: 3s;
-            transition-duration: 3s;
+    -moz-transition-duration: 3s;
+    -o-transition-duration: 3s;
+    transition-duration: 3s;
     -webkit-transition-timing-function: linear;
-       -moz-transition-timing-function: linear;
-         -o-transition-timing-function: linear;
-            transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
 }
 
 .lovely-owl .eye.eye-l:hover {
-  background: radial-gradient(ellipse at center, #000000 25%, #8b3626 40%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%);
+    background: radial-gradient(ellipse at center, #000000 25%, #8b3626 40%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%);
 
 }
 
 .lovely-owl .eye.eye-r {
-  right: 10px;
+    right: 10px;
 }
 
 .lovely-owl .eye.eye-r:hover {
-  background: radial-gradient(ellipse at center, #000000 25%, #8b3626 40%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%);
+    background: radial-gradient(ellipse at center, #000000 25%, #8b3626 40%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%);
 }
 
 .lovely-owl .eye:before, .lovely-owl .eye:after {
-  content: '';
-  display: block;
-  position: absolute;
-  background: white;
-  border-radius: 50%;
+    content: '';
+    display: block;
+    position: absolute;
+    background: white;
+    border-radius: 50%;
 }
 .lovely-owl .eye:before {
-  width: 25px;
-  height: 25px;
-  right: 20px;
-  top: 20px;
-  z-index: 200;
-  -webkit-animation:slideBefore 0.2s -2.7s ease-in-out infinite;
-  animation:slideBefore 0.2s ease  infinite;
+    width: 25px;
+    height: 25px;
+    right: 20px;
+    top: 20px;
+    z-index: 200;
+    -webkit-animation:slideBefore 0.2s -2.7s ease-in-out infinite;
+    animation:slideBefore 0.2s ease  infinite;
 }
 
 @keyframes slideBefore {
-  0% { left:50%; }
-/*  10% { left:49% }
-  20% { left:48% }
-  30% { left:47% }
-  40% { left:46% }*/
-  50% { left:49%; }
-/*  60% { left:46% }
-  70% { left:47% }
-  80% { left:48%; }
-  90% { left:49%; }*/
-  100% { left:50%; }
+    0% { left:50%; }
+    /*  10% { left:49% }
+      20% { left:48% }
+      30% { left:47% }
+      40% { left:46% }*/
+    50% { left:49%; }
+    /*  60% { left:46% }
+      70% { left:47% }
+      80% { left:48%; }
+      90% { left:49%; }*/
+    100% { left:50%; }
 }
 
 @-webkit-keyframes slideBefore {
-  0% { left:50%; }
-  50% { left:49%; }
-  100% { left:50%; }
+    0% { left:50%; }
+    50% { left:49%; }
+    100% { left:50%; }
 }
 
 .lovely-owl .eye:after {
-  width: 20px;
-  height: 10px;
-  left: 13px;
-  bottom: 23px;
-  -webkit-animation:slideAfter 0.2s -2.7s ease-in-out infinite;
-  animation:slideAfter 0.2s -2.7s ease-in-out infinite;
+    width: 20px;
+    height: 10px;
+    left: 13px;
+    bottom: 23px;
+    -webkit-animation:slideAfter 0.2s -2.7s ease-in-out infinite;
+    animation:slideAfter 0.2s -2.7s ease-in-out infinite;
 }
 
 @keyframes slideAfter {
-  0% { left:25%; }
-  50% { left:27%; }
-  100% { left:25%; }
+    0% { left:25%; }
+    50% { left:27%; }
+    100% { left:25%; }
 }
 
 @-webkit-keyframes slideAfter {
-  0% { left:25%;}
-  50% { left:27%; }
-  100% { left:25%; }
+    0% { left:25%;}
+    50% { left:27%; }
+    100% { left:25%; }
 }
 
 .lovely-owl .beak {
-  width: 0;
-  height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-top: 50px solid darkorange;
-  margin: 0 auto;
-  position: relative;
-  top: 60px;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 50px solid darkorange;
+    margin: 0 auto;
+    position: relative;
+    top: 60px;
 }
 .lovely-owl .wings {
-  z-index: 100;
-  background: crimson;
-  width: 180px;
-  height: 150px;
-  margin: 0 auto;
-  position: relative;
-  top: -40px;
-  border-radius: 50% 50% 60% 60%;
+    z-index: 100;
+    background: crimson;
+    width: 180px;
+    height: 150px;
+    margin: 0 auto;
+    position: relative;
+    top: -40px;
+    border-radius: 50% 50% 60% 60%;
 }
 .lovely-owl .wings .belly {
-  background: palevioletred;
-  width: 130px;
-  height: 150px;
-  border-radius: 50% 50% 30% 30%;
-  margin: 0 auto;
-  position: relative;
-  top: -90px;
+    background: palevioletred;
+    width: 130px;
+    height: 150px;
+    border-radius: 50% 50% 30% 30%;
+    margin: 0 auto;
+    position: relative;
+    top: -90px;
 }
 .lovely-owl .wings .heart {
-  position: relative;
-  width: 100px;
-  height: 90px;
-  margin: 0 auto;
-  top: 45px;
-  z-index: 300;
+    position: relative;
+    width: 100px;
+    height: 90px;
+    margin: 0 auto;
+    top: 45px;
+    z-index: 300;
 }
 
+/*Анимация*/
+.heart.css {  
+    -webkit-animation-delay:1s;
+    -moz-animation-delay:1s;
+    -ms-animation-delay:1s;
+    -o-animation-delay:1s;
+    animation-dely:1s;
+}
+.heart.animated {
+    -webkit-animation: 1600ms pulsate infinite alternate ease-in-out;
+    -moz-animation: 1600ms pulsate infinite alternate ease-in-out;
+    -ms-animation: 1600ms pulsate infinite alternate ease-in-out;
+    -o-animation: 1600ms pulsate infinite alternate ease-in-out;
+    animation: 1600ms pulsate infinite alternate ease-in-out;
+}
+.heart.css:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-animation:'';
+    -moz-animation:none;
+    -ms-animation:'';
+    -o-animation:'';
+    animation:'';
+}
+
+@keyframes pulsate {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(0.9); }
+}
+@-webkit-keyframes pulsate {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(0.9); }
+}
+@-moz-keyframes pulsate {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(0.9); } 
+}
+@-ms-keyframes pulsate {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(0.9); } 
+}
+@-o-keyframes pulsate {
+    0% { transform: scale(0.9); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(0.9); }
+}
+
+/*--------------------------*/
+
+
 .lovely-owl .wings .heart:before, .lovely-owl .wings .heart:after {
-  position: absolute;
-  content: "";
-  left: 50px;
-  top: 0;
-  width: 50px;
-  height: 80px;
-  background: lightpink;
-  border-radius: 50px 50px 0 0;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%;
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: lightpink;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
 }
 .lovely-owl .wings .heart:after {
-  left: 0;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-transform-origin: 100% 100%;
-  transform-origin: 100% 100%;
+    left: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
 }
 .lovely-owl .feet {
-  position: absolute;
-  bottom: -10px;
-  height: 25px;
-  width: 10px;
-  background-color: darkorange;
-  border-radius: 50%;
+    position: absolute;
+    bottom: -10px;
+    height: 25px;
+    width: 10px;
+    background-color: darkorange;
+    border-radius: 50%;
 }
 .lovely-owl .feet:before, .lovely-owl .feet:after {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  width: 10px;
-  background-color: darkorange;
-  border-radius: 50%;
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 10px;
+    background-color: darkorange;
+    border-radius: 50%;
 }
 .lovely-owl .feet.left {
-  left: 70px;
+    left: 70px;
 }
 .lovely-owl .feet.left:before {
-  height: 24px;
-  left: -9px;
-  bottom: 1px;
+    height: 24px;
+    left: -9px;
+    bottom: 1px;
 }
 .lovely-owl .feet.left:after {
-  height: 24px;
-  right: -9px;
+    height: 24px;
+    right: -9px;
 }
 .lovely-owl .feet.right {
-  right: 70px;
+    right: 70px;
 }
 .lovely-owl .feet.right:before {
-  height: 24px;
-  left: -9px;
+    height: 24px;
+    left: -9px;
 }
 .lovely-owl .feet.right:after {
-  height: 24px;
-  right: -9px;
-  bottom: 1px;
+    height: 24px;
+    right: -9px;
+    bottom: 1px;
 }
 .lovely-owl .hearts {
-  position: absolute;
-  width: 100px;
-  height: 90px;
-  top: 40px;
-  z-index: 300;
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    top: 40px;
+    z-index: 300;
 }
 .lovely-owl .hearts:before, .lovely-owl .hearts:after {
-  position: absolute;
-  content: "";
-  left: 50px;
-  top: 0;
-  width: 50px;
-  height: 80px;
-  background: crimson;
-  border-radius: 50px 50px 0 0;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%;
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: crimson;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
 }
 .lovely-owl .hearts:after {
-  left: 0;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-transform-origin: 100% 100%;
-  transform-origin: 100% 100%;
+    left: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
 }
 .lovely-owl .heart1 {
-  right: -100px;
-  bottom: -10px;
-  -webkit-transform: rotate(15deg) scale(0.8);
-  /*-webkit-transform: scale(1);*/
-  transform: rotate(15deg) scale(0.8);
+    right: -100px;
+    bottom: -10px;
+    -webkit-transform: rotate(15deg) scale(0.8);
+    /*-webkit-transform: scale(1);*/
+    transform: rotate(15deg) scale(0.8);
 }
 .lovely-owl .heart2 {
-  right: -90px;
-  top: 55px;
-  -webkit-transform: scale(0.6);
-  transform: scale(0.6);
+    right: -90px;
+    top: 55px;
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
 }
 .lovely-owl .heart2:before, .lovely-owl .heart2:after {
-  background: lightpink;
+    background: lightpink;
 }
 .lovely-owl .heart3 {
-  -webkit-transform: rotate(-15deg) scale(0.6);
-  transform: rotate(-15deg) scale(0.6);
-  left: -100px;
+    -webkit-transform: rotate(-15deg) scale(0.6);
+    transform: rotate(-15deg) scale(0.6);
+    left: -100px;
 }
 .lovely-owl .heart3:before, .lovely-owl .heart3:after {
-  background: crimson;
+    background: crimson;
 }
 .lovely-owl .branch {
-  width: 300px;
-  height: 1rem;
-  background: brown;
-  top: -40px;
-  position: relative;
+    width: 300px;
+    height: 1rem;
+    background: brown;
+    top: -40px;
+    position: relative;
 }

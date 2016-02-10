@@ -98,36 +98,27 @@
 //                    $("body").removeAttr("id");
 //                });
                 document.getElementById("heart").addEventListener("mouseover", stop);
-                document.getElementById("heart").addEventListener("mouseout", start);
-                var cycle = 19;
+                document.getElementById("heart").addEventListener("mouseout", play);
+                var cycle = 10;
+                var myPlayer = document.getElementById('player');
                 function stop() {
-                    for(var i = 0; i < cycle; i++) {
-                        setTimeout(stopHelper, 1000);
-                    }
-                    //document.getElementById('player').pause();
+                    playerHelper(-0.05, 0.0, myPlayer);
                 }
-                function stopHelper() {
-                    document.getElementById('player').volume-=0.05;
+
+                function play() {
+                     playerHelper(0.05, 1.0, myPlayer);
                 }
-                function start() {
-                    //document.getElementById('player').play();
-                    for(var i = 0; i < cycle; i++) {
-                        setTimeout(startHelper, 1000);
-                    }
+                function playerHelper(step, end, player) {
+                    //начать повторы с интервалом 2 сек
+                    var timerId = setInterval(function() {
+                      player.volume += step;
+                    }, 100);
+                    // через 2 сек остановить повторы
+                    setTimeout(function() {
+                      clearInterval(timerId);
+                      player.volume = end;
+                    }, 2000);
                 }
-                function startHelper() {
-                    document.getElementById('player').volume+=0.05;
-                }
-                // начать повторы с интервалом 2 сек
-//                var timerId = setInterval(function() {
-//                  alert( "тик" );
-//                }, 2000);
-//
-//                // через 5 сек остановить повторы
-//                setTimeout(function() {
-//                  clearInterval(timerId);
-//                  alert( 'стоп' );
-//                }, 5000);
             </script>
     </body>
 </html>

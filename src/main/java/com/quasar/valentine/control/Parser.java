@@ -11,6 +11,7 @@ public class Parser {
 
     private static final String ACTION_ABOUT = "about";
     private static final String RAIN = "rain";
+    private static final String SLIDE = "slide";
 
     private static final String ACTION_INPUT_AND_MULTIPLY = "inputAndMultiplyPage";
     private static final String INPUT_AND_MULTIPLY = "inputAndMultiply";
@@ -51,6 +52,8 @@ public class Parser {
             case RAIN:
                 //System.out.println("multiply");
                 return Pages.RAIN;
+            case SLIDE:
+                return Pages.SLIDE;
             case ACTION_INPUT_AND_MULTIPLY:
                 //System.out.println("inputAndMultiplyPages");
                 return Pages.INPUT_AND_MULTIPLY;

@@ -39,7 +39,7 @@ template {
 a {
     background-color: transparent;
     text-decoration: none;
-    
+    color: #4d4d4d;
 }
 a:active,
 a:hover,

@@ -37,11 +37,15 @@ template {
     display: none
 }
 a {
-    background-color: transparent
+    background-color: transparent;
+    text-decoration: none;
+    
 }
 a:active,
-a:hover {
-    outline: 0
+a:hover,
+a:visited{
+    outline: 0;
+    color: #4d4d4d;
 }
 abbr[title] {
     border-bottom: 1px dotted

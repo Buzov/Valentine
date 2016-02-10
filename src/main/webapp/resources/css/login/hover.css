@@ -3989,7 +3989,7 @@ button::-moz-focus-inner
 }
 .item-active,.item-active a
 {
-    color: #1B98E0!important;
+    color: #DB7093!important;
     moz-transition: all 1s ease;
     ms-transition: all 1s ease;
     o-transition: all 1s ease;
@@ -4029,7 +4029,7 @@ button::-moz-focus-inner
 }
 .nav:focus,.nav:hover
 {
-    color: #1B98E0;
+    color: #DB7093;
     cursor: pointer;
     outline: 0;
     transition: color 1s ease;
@@ -4047,7 +4047,7 @@ button::-moz-focus-inner
 }
 .nav:focus:after,.nav:focus:before,.nav:hover:after,.nav:hover:before
 {
-    background-color: #1B98E0;
+    background-color: #DB7093;
     outline: 0;
     transition: all 1s ease 0s;
 }
@@ -4099,7 +4099,7 @@ button::-moz-focus-inner
     }
     .nav:focus,.nav:hover
     {
-        color: #1B98E0;
+        color: #DB7093;
         cursor: pointer;
         moz-transition: color 1s ease;
         ms-transition: color 1s ease;
@@ -4118,7 +4118,7 @@ button::-moz-focus-inner
     }
     .nav:focus:after,.nav:focus:before,.nav:hover:after,.nav:hover:before
     {
-        background-color: #1B98E0;
+        background-color: #DB7093;
         moz-transition: all 1s ease 0s;
         ms-transition: all 1s ease 0s;
         o-transition: all 1s ease 0s;
@@ -4281,7 +4281,7 @@ button::-moz-focus-inner
 }
 .effect-demo:focus,.effect-demo:hover
 {
-    color: #1B98E0;
+    color: #DB7093;
     cursor: pointer;
     outline: 0;
     transition: color 1s ease;
@@ -4292,7 +4292,7 @@ button::-moz-focus-inner
 }
 .effect-demo:focus:after,.effect-demo:focus:before,.effect-demo:hover:after,.effect-demo:hover:before
 {
-    background-color: #1B98E0;
+    background-color: #DB7093;
     moz-transition: all 1s ease 0s;
     ms-transition: all 1s ease 0s;
     o-transition: all 1s ease 0s;
@@ -4327,7 +4327,7 @@ button::-moz-focus-inner
 }
 .effect-demo.block:focus,.effect-demo.block:hover
 {
-    color: #1B98E0;
+    color: #DB7093;
     outline: 0;
     transition: color 1s ease;
 }
@@ -4341,7 +4341,7 @@ button::-moz-focus-inner
 }
 .effect-demo.block:focus:after,.effect-demo.block:focus:before,.effect-demo.block:hover:after,.effect-demo.block:hover:before
 {
-    background-color: #1B98E0;
+    background-color: #DB7093;
     moz-transition: all 1s ease 0s;
     ms-transition: all 1s ease 0s;
     o-transition: all 1s ease 0s;
@@ -4368,7 +4368,7 @@ span
 }
 span:focus,span:hover
 {
-    color: #1B98E0;
+    color: #DB7093;
     cursor: pointer;
     moz-transition: color 1s ease;
     ms-transition: color 1s ease;
@@ -4387,7 +4387,7 @@ span:after,span:before
 }
 span:focus:after,span:focus:before,span:hover:after,span:hover:before
 {
-    background-color: #1B98E0;
+    background-color: #DB7093;
     moz-transition: all 1s ease 0s;
     ms-transition: all 1s ease 0s;
     o-transition: all 1s ease 0s;

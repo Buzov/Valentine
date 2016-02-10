@@ -21,6 +21,113 @@
                 background: url(${pageContext.request.contextPath}/resources/img/login/vulcano_der.jpg) no-repeat left top;
                 left:50%;
             }
+
+            /* Most of the heart's CSS came from the Shapes of CSS  */
+            /* http://css-tricks.com/examples/ShapesOfCSS/          */
+/*            .heart {
+                position: relative;
+                width: 100px;
+                height: 90px;
+                margin: 30px;
+
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                -moz-transform: scale(1);
+                transform: scale(1);
+                -webkit-transform-origin: center center;
+                -moz-transform-origin: center center;
+                -ms-transform-origin: center center;
+                -o-transform-origin: center center;
+                transition: all 1s; 
+            }*/
+            .heart.css {  
+                -webkit-animation-delay:1s;
+                -moz-animation-delay:1s;
+                -ms-animation-delay:1s;
+                -o-animation-delay:1s;
+                animation-dely:1s;
+            }
+            .heart.animated {
+                -webkit-animation: 1600ms pulsate infinite alternate ease-in-out;
+                -moz-animation: 1600ms pulsate infinite alternate ease-in-out;
+                -ms-animation: 1600ms pulsate infinite alternate ease-in-out;
+                -o-animation: 1600ms pulsate infinite alternate ease-in-out;
+                animation: 1600ms pulsate infinite alternate ease-in-out;
+            }
+/*            .heart:before,
+            .heart:after { 
+                position: absolute; 
+                content: "";
+                left: 50px;
+                top: 0;
+                width: 50px;
+                height: 80px;
+                background: red;
+                -moz-border-radius: 50px 50px 0 0;
+                border-radius: 50px 50px 0 0;
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                -webkit-transform-origin: 0 100%;
+                -moz-transform-origin: 0 100%;
+                -ms-transform-origin: 0 100%;
+                -o-transform-origin: 0 100%;
+                transform-origin: 0 100%;
+            }
+            .heart:after {
+                left: 0;
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+                -webkit-transform-origin: 100% 100%;
+                -moz-transform-origin: 100% 100%;
+                -ms-transform-origin: 100% 100%;
+                -o-transform-origin: 100% 100%;
+                transform-origin :100% 100%;
+            }*/
+            .heart.css:hover {
+                -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                -o-transform: scale(1.1);
+                transform: scale(1.1);
+                -webkit-animation:'';
+                -moz-animation:none;
+                -ms-animation:'';
+                -o-animation:'';
+                animation:'';
+            }
+
+            @keyframes pulsate {
+                0% { transform: scale(0.9); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(0.9); }
+            }
+            @-webkit-keyframes pulsate {
+                0% { transform: scale(0.9); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(0.9); }
+            }
+            @-moz-keyframes pulsate {
+                0% { transform: scale(0.9); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(0.9); } 
+            }
+            @-ms-keyframes pulsate {
+                0% { transform: scale(0.9); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(0.9); } 
+            }
+            @-o-keyframes pulsate {
+                0% { transform: scale(0.9); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(0.9); }
+            }
         </style>
         <script src="${pageContext.request.contextPath}/resources/js/login/prefixfree.min.js"></script>
         <script src="${pageContext.request.contextPath}/resources/js/login/stop_anim.js"></script>
@@ -32,7 +139,7 @@
                 document.getElementById('player').pause();
             }
         </script>
-        
+
         <link href="${pageContext.request.contextPath}/resources/css/login/test_anim.css" rel="stylesheet" type="text/css">
 
     </head>
@@ -51,7 +158,7 @@
                 <div id="eye-l" class="eye eye-l" onclick="document.getElementById('player').pause()"></div>  
             </div>
             <div id="wings" class="wings" >
-                <div id="heart" class="heart"></div>
+                <div id="heart" class="heart animated css"></div>
                 <div class="belly"></div>
 
                 <div class="feet left"></div>
@@ -91,12 +198,12 @@
                 </span>
             </a>
         </div>
-                
-                <div id="animated">
+
+        <div id="animated">
             <a  href="${pageContext.request.contextPath}/love?action=slide">
-                
-                    Slide
-                
+
+                Slide
+
             </a>
         </div>
 

@@ -186,9 +186,10 @@
   width: 100px;
   height: 90px;
   margin: 0 auto;
-  top: 40px;
+  top: 45px;
   z-index: 300;
 }
+
 .lovely-owl .wings .heart:before, .lovely-owl .wings .heart:after {
   position: absolute;
   content: "";

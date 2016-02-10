@@ -1,0 +1,70 @@
+@-moz-keyframes grow {
+	0% {
+		width: 100px;
+		height: 100px;
+	}
+	
+	100% {
+		width: 120px;
+		height: 120px;
+	}
+}
+
+@-webkit-keyframes grow {
+	0% {
+		width: 100px;
+		height: 100px;
+	}
+	
+	100% {
+		width: 120px;
+		height: 120px;
+	}
+}
+
+@-ms-keyframes grow {
+	0% {
+		width: 100px;
+		height: 100px;
+	}
+	
+	100% {
+		width: 120px;
+		height: 120px;
+	}
+}
+
+
+@keyframes grow {
+	0% {
+		width: 100px;
+		height: 100px;
+	}
+	
+	100% {
+		width: 120px;
+		height: 120px;
+	}
+}
+
+
+
+
+
+	#animated {
+		width: 100px;
+		height: 100px;
+		background: silver;
+		margin: 1em 0;
+		-moz-animation: grow 1s infinite;
+		-webkit-animation: grow 1s infinite;
+		-ms-animation: grow 1s infinite;
+			animation: grow 1s infinite;
+	}
+	
+	#animated.off {
+		-moz-animation-name: none;
+	-webkit-animation-name: none;
+	-ms-animation-name: none;
+		animation-name: none;	
+	}

@@ -38,14 +38,15 @@
 .lovely-owl .eye {
   background: #000000;
   background: -webkit-radial-gradient(center, ellipse cover, #000 36%, #8b3626 36%, #8b3626 38%, #8b3626 50%, #000 50%, #000 60%, #fff 60%, #fff 100%);
-  background: radial-gradient(ellipse at center, #000000 36%, #8b3626 50%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%);
+  background: radial-gradient(ellipse at center, #000000 36%, #8b3626 48%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%);
   width: 90px;
   height: 90px;
   border-radius: 50%;
   position: absolute;
   top: 13px;
+  animation: eyeAnim 0.5s -0.7s ease infinite;
   /*  transition: 3s;*/
-/*  -webkit-transition-property: background;
+  /*  -webkit-transition-property: background;
   -moz-transition-property: background;
   -o-transition-property: background;
   transition-property: background;
@@ -57,6 +58,11 @@
   -moz-transition-timing-function: linear;
   -o-transition-timing-function: linear;
   transition-timing-function: linear;*/
+}
+
+@keyframes eyeAnim {
+  0% { background: radial-gradient(ellipse at center, #000000 36%, #8b3626 39%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%); }
+  100% { background: radial-gradient(ellipse at center, #000000 36%, #8b3626 40%, #8b3626 38%, #8b3626 50%, #000000 52%, #000000 60%, #ffffff 62%, #ffffff 100%); }
 }
 
 .lovely-owl .eye.eye-l {
@@ -101,13 +107,51 @@
   right: 20px;
   top: 20px;
   z-index: 200;
+  -webkit-animation:slideBefore 0.2s -2.7s ease-in-out infinite;
+  animation:slideBefore 0.2s ease  infinite;
 }
+
+@keyframes slideBefore {
+  0% { left:50%; }
+/*  10% { left:49% }
+  20% { left:48% }
+  30% { left:47% }
+  40% { left:46% }*/
+  50% { left:49%; }
+/*  60% { left:46% }
+  70% { left:47% }
+  80% { left:48%; }
+  90% { left:49%; }*/
+  100% { left:50%; }
+}
+
+@-webkit-keyframes slideBefore {
+  0% { left:50%; }
+  50% { left:49%; }
+  100% { left:50%; }
+}
+
 .lovely-owl .eye:after {
   width: 20px;
   height: 10px;
   left: 13px;
   bottom: 23px;
+  -webkit-animation:slideAfter 0.2s -2.7s ease-in-out infinite;
+  animation:slideAfter 0.2s -2.7s ease-in-out infinite;
 }
+
+@keyframes slideAfter {
+  0% { left:25%; }
+  50% { left:27%; }
+  100% { left:25%; }
+}
+
+@-webkit-keyframes slideAfter {
+  0% { left:25%;}
+  50% { left:27%; }
+  100% { left:25%; }
+}
+
 .lovely-owl .beak {
   width: 0;
   height: 0;

@@ -21,15 +21,9 @@
                 background: url(${pageContext.request.contextPath}/resources/img/login/vulcano_der.jpg) no-repeat left top;
                 left:50%;
             }
-
-            /*            #transition_disabled {
-                          -webkit-transition: none !important;
-                          -moz-transition: none !important;
-                          -ms-transition: none !important;
-                          -o-transition: none !important;
-                        }*/
         </style>
         <script src="${pageContext.request.contextPath}/resources/js/login/prefixfree.min.js"></script>
+        <script src="${pageContext.request.contextPath}/resources/js/login/stop_anim.js"></script>
         <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
 
         <script type="text/javascript">
@@ -38,6 +32,8 @@
                 document.getElementById('player').pause();
             }
         </script>
+        
+        <link href="${pageContext.request.contextPath}/resources/css/login/test_anim.css" rel="stylesheet" type="text/css">
 
     </head>
     <body id="transition_disabled">
@@ -54,7 +50,7 @@
                 <div id="eye-r" class="eye eye-r" onclick="document.getElementById('player').play()" onmouseover="agreeForm"></div>
                 <div id="eye-l" class="eye eye-l" onclick="document.getElementById('player').pause()"></div>  
             </div>
-            <div class="wings">
+            <div id="wings" class="wings" >
                 <div id="heart" class="heart"></div>
                 <div class="belly"></div>
 
@@ -95,19 +91,31 @@
                 </span>
             </a>
         </div>
+                
+                <div id="animated">
+            <a  href="${pageContext.request.contextPath}/love?action=slide">
+                
+                    Slide
+                
+            </a>
+        </div>
+
+        <div style="text-align: center;">
+            <button id="stop">Stop</button>
+            <button id="start">Start</button>
+        </div>
+        <div style="text-align: center;" id="animated"></div>
 
 
         <canvas id="heart"></canvas>          
 
         <script type="text/javascript">
-//                $("window").load(function() {
-//                    $("body").removeAttr("id");
-//                });
-            document.getElementById("heart").addEventListener("mouseover", stop);
-            document.getElementById("heart").addEventListener("mouseout", play);
+            document.getElementById("wings").addEventListener("mouseover", stop);
+            document.getElementById("wings").addEventListener("mouseout", play);
             var cycle = 10;
             var myPlayer = document.getElementById('player');
             function stop() {
+                document.getElementById('eye-r').style.animation;
                 playerHelper(-0.05, 0.0, myPlayer);
             }
 
@@ -126,5 +134,6 @@
                 }, 2000);
             }
         </script>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     </body>
 </html>

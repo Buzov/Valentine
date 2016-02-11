@@ -106,7 +106,7 @@
         <input type="checkbox"/>
         <div id="izq"></div> <div id="der"></div>
 
-        <div class="lovely-owl">
+        <div id="owl" class="lovely-owl">
             <div class="head">
                 <div class="beak"></div>
                 <div id="eye-r" class="eye animated eye-r" onclick="document.getElementById('player').play()" onmouseover="agreeForm"></div>
@@ -157,6 +157,8 @@
         <script type="text/javascript">
             document.getElementById("heart").addEventListener("mouseover", stop);
             document.getElementById("heart").addEventListener("mouseout", play);
+            document.getElementById("heart").addEventListener("mouseover", stopEye);
+            document.getElementById("heart").addEventListener("mouseout", startEye);
             var cycle = 10;
             var myPlayer = document.getElementById('player');
             var myPlayer_heart = document.getElementById("player_splin");
@@ -221,54 +223,15 @@
                 }, 2000);
             }
             
-            var heart = document.getElementsByClassName('lovely-owl');
-            var eye_r = document.getElementsByClassName('eye')[0],
-                eye_l = document.getElementsByClassName('eye')[1],
-                pfx = ["webkit", "moz", "MS", "o", ""],
-                hovered = false;
-
-            function AnimationListener() {
-                if (hovered) {
-                    eye_r.classList.remove('animated');
-                    eye_r.style.webkitTransform = 'scale(2)';
-                    eye_r.style.MozTransform = 'scale(2)';
-                    eye_r.style.msTransform = 'scale(2)';
-                    eye_r.style.OTransform = 'scale(2)';
-                    eye_r.style.transform = 'scale(2)';
-                }
+            function stopEye() {
+                document.getElementsByClassName('eye')[0].classList.remove('animated');
+                document.getElementsByClassName('eye')[1].classList.remove('animated');
             }
-
-            function TransitionListener() {
-                if (!hovered) {
-                    eye_r.classList.add('animated');
-                }
-            }
-
-            function PrefixedEvent(element, type, callback) {
-                for (var p = 0; p < pfx.length; p++) {
-                    if (!pfx[p])
-                        type = type.toLowerCase();
-                    element.addEventListener(pfx[p] + type, callback, false);
-                }
-            }
-
-            PrefixedEvent(eye_r, "AnimationIteration", AnimationListener);
-
-            heart.onmouseover = function () {
-                hovered = true;
-            };
-            heart.onmouseout = function () {
-                setTimeout(function () {
-                    hovered = false;
-                }, 500);
-                PrefixedEvent(eye_r, "TransitionEnd", TransitionListener);
-                eye_r.style.webkitTransform = 'scale(1)';
-                eye_r.style.MozTransform = 'scale(1)';
-                eye_r.style.msTransform = 'scale(1)';
-                eye_r.style.OTransform = 'scale(1)';
-                eye_r.style.transform = 'scale(1)';
-            };
             
+            function startEye() {
+                document.getElementsByClassName('eye')[0].classList.add('animated');
+                document.getElementsByClassName('eye')[1].classList.add('animated');
+            }
             /*--------------------------------*/
 
             /*var heart = document.getElementsByClassName('heart')[1],

@@ -206,16 +206,47 @@
     animation: 1600ms pulsate infinite alternate ease-in-out;
 }
 .heart.css:hover {
-    -webkit-transform: scale(1.1);
+/*    -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
-    transform: scale(1.1);
-    -webkit-animation:'';
+    transform: scale(1.1);*/
+/*    -webkit-animation:'';
     -moz-animation:none;
     -ms-animation:'';
     -o-animation:'';
-    animation:'';
+    animation:'';*/
+    -webkit-animation: 1600ms pulsateHover infinite alternate ease-in-out;
+    -moz-animation: 1600ms pulsateHover infinite alternate ease-in-out;
+    -ms-animation: 1600ms pulsateHover infinite alternate ease-in-out;
+    -o-animation: 1600ms pulsateHover infinite alternate ease-in-out;
+    animation: 1600ms pulsateHover infinite alternate ease-in-out;
+}
+
+@keyframes pulsateHover {
+    0% { transform: scale(1.05); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.05); }
+}
+@-webkit-keyframes pulsateHover {
+    0% { transform: scale(1.05); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.05); }
+}
+@-moz-keyframes pulsateHover {
+    0% { transform: scale(1.05); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.05); } 
+}
+@-ms-keyframes pulsateHover {
+    0% { transform: scale(1.05); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.05); }
+}
+@-o-keyframes pulsateHover {
+    0% { transform: scale(1.05); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.05); }
 }
 
 @keyframes pulsate {

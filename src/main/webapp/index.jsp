@@ -191,7 +191,7 @@
                 }, 2000);
             }
 
-            var heart = document.getElementsByClassName('heart')[1],
+            /*var heart = document.getElementsByClassName('heart')[1],
                     pfx = ["webkit", "moz", "MS", "o", ""],
                     hovered = false;
 
@@ -237,7 +237,7 @@
                 heart.style.msTransform = 'scale(1)';
                 heart.style.OTransform = 'scale(1)';
                 heart.style.transform = 'scale(1)';
-            }
+            }*/
 
 
         </script>

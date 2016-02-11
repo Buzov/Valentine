@@ -44,7 +44,7 @@
     border-radius: 50%;
     position: absolute;
     top: 13px;
-    animation: eyeAnim 0.5s -0.7s ease infinite;
+    
     /*  transition: 3s;*/
     /*  -webkit-transition-property: background;
     -moz-transition-property: background;
@@ -58,6 +58,10 @@
     -moz-transition-timing-function: linear;
     -o-transition-timing-function: linear;
     transition-timing-function: linear;*/
+}
+
+.lovely-owl .eye.animated {
+    animation: eyeAnim 0.5s -0.7s ease infinite;
 }
 
 @keyframes eyeAnim {

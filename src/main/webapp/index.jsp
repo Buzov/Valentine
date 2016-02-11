@@ -100,8 +100,8 @@
     </head>
     <body id="transition_disabled">
 
-        <audio id="player" src="${pageContext.request.contextPath}/resources/sound/Celldweller.mp3" autoplay loop ></audio>
-        <audio id="player_splin" src="${pageContext.request.contextPath}/resources/sound/login/splin_my_heart.mp3" loop ></audio>
+        <audio id="player" src="${pageContext.request.contextPath}/resources/sound/login/splin_say_i_love_her.mp3" autoplay loop ></audio>
+        <audio id="player_splin" src="${pageContext.request.contextPath}/resources/sound/login/splin_my_heart_4.mp3" loop ></audio>
         <!--<input type="checkbox" name="agree" onclick="agreeForm(this.form)"/>-->
         <input type="checkbox"/>
         <div id="izq"></div> <div id="der"></div>
@@ -109,8 +109,8 @@
         <div class="lovely-owl">
             <div class="head">
                 <div class="beak"></div>
-                <div id="eye-r" class="eye eye-r" onclick="document.getElementById('player').play()" onmouseover="agreeForm"></div>
-                <div id="eye-l" class="eye eye-l" onclick="document.getElementById('player').pause()"></div>  
+                <div id="eye-r" class="eye animated eye-r" onclick="document.getElementById('player').play()" onmouseover="agreeForm"></div>
+                <div id="eye-l" class="eye animated eye-l" onclick="document.getElementById('player').pause()"></div>  
             </div>
             <div id="wings" class="wings" >
                 <div id="heart" class="heart animated css"></div>
@@ -155,43 +155,80 @@
         </div>
 
         <script type="text/javascript">
-            document.getElementById("wings").addEventListener("mouseover", stop);
-            document.getElementById("wings").addEventListener("mouseout", play);
+            document.getElementById("heart").addEventListener("mouseover", stop);
+            document.getElementById("heart").addEventListener("mouseout", play);
             var cycle = 10;
             var myPlayer = document.getElementById('player');
             var myPlayer_heart = document.getElementById("player_splin");
             function stop() {
-                document.getElementById('eye-r').style.animation;
-                playerHelper(-0.05, 0.0, myPlayer, myPlayer_heart);
+                //document.getElementById('eye-r').style.animation;
+                stopHelper(myPlayer, myPlayer_heart);
             }
 
             function play() {
-                playerHelper(0.05, 1.0, myPlayer, myPlayer_heart);
+                playHelper(myPlayer, myPlayer_heart);
             }
-            function playerHelper(step, end, player, secondPlayer) {
-                //начать повторы с интервалом 2 сек
+            
+            function stopHelper(player, secondPlayer) {
+                var end = 0.0;
+                var step = 0.1;
                 secondPlayer.volume = end;
+                secondPlayer.play();
                 var timerId = setInterval(function () {
-                    secondPlayer.play();
-                    secondPlayer.volume += (step*(-1));
-                    player.volume += step;
+                    if((player.volume - step) < 0.0) {
+                        player.stop();
+                    } else {
+                        player.volume -= step;
+                    }
+                    if((secondPlayer.volume + step) > 1.0) {
+                        player.stop();
+                    } else {
+                        secondPlayer.volume += step;
+                    }
+                }, 100);
+                setTimeout(function () {
+                    clearInterval(timerId);
+                    secondPlayer.volume = 1.0;
+                    player.volume = end;
+                    player.stop();
+                }, 2000);
+            }
+            
+            function playHelper(player, secondPlayer) {
+                //начать повторы с интервалом 2 сек
+                var end = 1.0;
+                var step = 0.1;
+                player.play();
+                var timerId = setInterval(function () {
+                     if((player.volume + step) > 1.0) {
+                        secondPlayer.stop();
+                    } else {
+                        player.volume += step;
+                    }
+                    if((secondPlayer.volume - step) < 0.0) {
+                        secondPlayer.stop();
+                    } else {
+                        secondPlayer.volume -= step;
+                    }
                 }, 100);
                 // через 2 сек остановить повторы
                 setTimeout(function () {
                     clearInterval(timerId);
                     player.volume = end;
+                    
+                    secondPlayer.volume = 0.0;
+                    secondPlayer.stop();
                 }, 2000);
             }
             
-            var heart = document.getElementsById('heart'),
-                    eye_r = document.getElementsByClassName('eye')[0],
-                    eye_l = document.getElementsByClassName('eye')[1],
-                    pfx = ["webkit", "moz", "MS", "o", ""],
-                    hovered = false;
+            var heart = document.getElementsByClassName('lovely-owl');
+            var eye_r = document.getElementsByClassName('eye')[0],
+                eye_l = document.getElementsByClassName('eye')[1],
+                pfx = ["webkit", "moz", "MS", "o", ""],
+                hovered = false;
 
             function AnimationListener() {
-                if (hovered)
-                {
+                if (hovered) {
                     eye_r.classList.remove('animated');
                     eye_r.style.webkitTransform = 'scale(2)';
                     eye_r.style.MozTransform = 'scale(2)';
@@ -202,8 +239,7 @@
             }
 
             function TransitionListener() {
-                if (!hovered)
-                {
+                if (!hovered) {
                     eye_r.classList.add('animated');
                 }
             }

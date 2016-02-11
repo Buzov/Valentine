@@ -13,6 +13,12 @@
         <link href="${pageContext.request.contextPath}/resources/css/login/slide.css" rel="stylesheet" type="text/css">
 
         <style>
+            #links {
+                margin: 10px;
+                text-align: center;
+            }
+            
+            
             #izq {
                 background: url(${pageContext.request.contextPath}/resources/img/login/vulcano_izq.jpg) no-repeat top right;
             }
@@ -80,7 +86,6 @@
 
         </style>
         <script src="${pageContext.request.contextPath}/resources/js/login/prefixfree.min.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/js/login/stop_anim.js"></script>
         <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
 
         <script type="text/javascript">
@@ -96,7 +101,7 @@
     <body id="transition_disabled">
 
         <audio id="player" src="${pageContext.request.contextPath}/resources/sound/Celldweller.mp3" autoplay loop ></audio>
-
+        <audio id="player_splin" src="${pageContext.request.contextPath}/resources/sound/login/splin_my_heart.mp3" loop ></audio>
         <!--<input type="checkbox" name="agree" onclick="agreeForm(this.form)"/>-->
         <input type="checkbox"/>
         <div id="izq"></div> <div id="der"></div>
@@ -126,7 +131,7 @@
         </div>
 
 
-        <div style="text-align: center;">
+        <div id="links">
             <a  href="${pageContext.request.contextPath}/love?action=about">
                 <span class="underline-opening">
                     I Love You
@@ -134,14 +139,14 @@
             </a>
         </div>
 
-        <div style="text-align: center;">
+        <div id="links">
             <a  href="${pageContext.request.contextPath}/love?action=rain">
                 <span class="underline-opening">
                     Rain
                 </span>
             </a>
         </div>
-        <div style="text-align: center;">
+        <div id="links">
             <a  href="${pageContext.request.contextPath}/love?action=slide">
                 <span class="underline-opening">
                     Slide
@@ -149,39 +154,26 @@
             </a>
         </div>
 
-        <div id="animated">
-            <a  href="${pageContext.request.contextPath}/love?action=slide">
-
-                Slide
-
-            </a>
-        </div>
-
-        <div style="text-align: center;">
-            <button id="stop">Stop</button>
-            <button id="start">Start</button>
-        </div>
-        <div style="text-align: center;" id="animated"></div>
-
-
-        <canvas id="heart"></canvas>          
-
         <script type="text/javascript">
             document.getElementById("wings").addEventListener("mouseover", stop);
             document.getElementById("wings").addEventListener("mouseout", play);
             var cycle = 10;
             var myPlayer = document.getElementById('player');
+            var myPlayer_heart = document.getElementById("player_splin");
             function stop() {
                 document.getElementById('eye-r').style.animation;
-                playerHelper(-0.05, 0.0, myPlayer);
+                playerHelper(-0.05, 0.0, myPlayer, myPlayer_heart);
             }
 
             function play() {
-                playerHelper(0.05, 1.0, myPlayer);
+                playerHelper(0.05, 1.0, myPlayer, myPlayer_heart);
             }
-            function playerHelper(step, end, player) {
+            function playerHelper(step, end, player, secondPlayer) {
                 //начать повторы с интервалом 2 сек
+                secondPlayer.volume = end;
                 var timerId = setInterval(function () {
+                    secondPlayer.play();
+                    secondPlayer.volume += (step*(-1));
                     player.volume += step;
                 }, 100);
                 // через 2 сек остановить повторы
@@ -190,6 +182,58 @@
                     player.volume = end;
                 }, 2000);
             }
+            
+            var heart = document.getElementsById('heart'),
+                    eye_r = document.getElementsByClassName('eye')[0],
+                    eye_l = document.getElementsByClassName('eye')[1],
+                    pfx = ["webkit", "moz", "MS", "o", ""],
+                    hovered = false;
+
+            function AnimationListener() {
+                if (hovered)
+                {
+                    eye_r.classList.remove('animated');
+                    eye_r.style.webkitTransform = 'scale(2)';
+                    eye_r.style.MozTransform = 'scale(2)';
+                    eye_r.style.msTransform = 'scale(2)';
+                    eye_r.style.OTransform = 'scale(2)';
+                    eye_r.style.transform = 'scale(2)';
+                }
+            }
+
+            function TransitionListener() {
+                if (!hovered)
+                {
+                    eye_r.classList.add('animated');
+                }
+            }
+
+            function PrefixedEvent(element, type, callback) {
+                for (var p = 0; p < pfx.length; p++) {
+                    if (!pfx[p])
+                        type = type.toLowerCase();
+                    element.addEventListener(pfx[p] + type, callback, false);
+                }
+            }
+
+            PrefixedEvent(eye_r, "AnimationIteration", AnimationListener);
+
+            heart.onmouseover = function () {
+                hovered = true;
+            };
+            heart.onmouseout = function () {
+                setTimeout(function () {
+                    hovered = false;
+                }, 500);
+                PrefixedEvent(eye_r, "TransitionEnd", TransitionListener);
+                eye_r.style.webkitTransform = 'scale(1)';
+                eye_r.style.MozTransform = 'scale(1)';
+                eye_r.style.msTransform = 'scale(1)';
+                eye_r.style.OTransform = 'scale(1)';
+                eye_r.style.transform = 'scale(1)';
+            };
+            
+            /*--------------------------------*/
 
             /*var heart = document.getElementsByClassName('heart')[1],
                     pfx = ["webkit", "moz", "MS", "o", ""],

@@ -21,11 +21,11 @@
 
 
             #izq {
-                background: url(${pageContext.request.contextPath}/resources/img/login/14-февраля-2_01_3.png) no-repeat top right;
+                background: url(${pageContext.request.contextPath}/resources/img/login/14-февраля-2_01_6.png) no-repeat top right;
             }
 
             #der {
-                background: url(${pageContext.request.contextPath}/resources/img/login/14-февраля-2_02_3.png) no-repeat left top;
+                background: url(${pageContext.request.contextPath}/resources/img/login/14-февраля-2_02_6.png) no-repeat left top;
                 left:50%;
             }
             .heart1{

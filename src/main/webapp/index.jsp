@@ -16,6 +16,7 @@
             #links {
                 margin: 10px;
                 text-align: center;
+                z-index: 300;
             }
 
 
@@ -49,60 +50,72 @@
             }*/
             @keyframes heart-anim_1 {
                 46% {
-
+                    z-index: -10;
                     transform: rotate(10deg) scale(1);
                 }
                 50% {
+                    z-index: -10;
                     transform: rotate(5deg) scale(1.3);
                 }
                 52% {
+                    z-index: -10;
                     transform: rotate(5deg) scale(1.5);
                 }
                 55% {
+                    z-index: -10;
                     opacity: 0.5;
                     transform: rotate(5deg) scale(3);
                 }
                 100% {
+                    z-index: -10;
                     opacity: 0;
                     transform: rotate(5deg) scale(50);
                 }
             }
             @keyframes heart-anim_2 {
                 46% {
-
+                    z-index: -10;
                     transform: rotate(0deg) scale(1);
                 }
                 50% {
+                    z-index: -10;
                     transform: rotate(-1deg) scale(1.3);
                 }
                 52% {
+                    z-index: -10;
                     transform: rotate(-2deg) scale(1.5);
                 }
                 55% {
+                    z-index: -10;
                     opacity: 0.5;
                     transform: rotate(-5deg) scale(3);
                 }
                 100% {
+                    z-index: -10;
                     opacity: 0;
                     transform: rotate(-10deg) scale(50);
                 }
             }
             @keyframes heart-anim_3 {
                 46% {
-
+                    z-index: -10;
                     transform: rotate(-15deg) scale(1);
                 }
                 50% {
+                    z-index: -10;
                     transform: rotate(-20deg) scale(1.3);
                 }
                 52% {
+                    z-index: -10;
                     transform: rotate(-20deg) scale(1.5);
                 }
                 55% {
+                    z-index: -10;
                     opacity: 0.5;
                     transform: rotate(-15deg) scale(3);
                 }
                 100% {
+                    z-index: -10;
                     opacity: 0;
                     transform: rotate(-10deg) scale(50);
                 }
@@ -158,7 +171,7 @@
 
         <div id="links">
             <a  href="${pageContext.request.contextPath}/love?action=about">
-                <span class="underline-opening">
+                <span class="underline-opening" style="z-index: 300;">
                     I Love You
                 </span>
             </a>
@@ -166,14 +179,14 @@
 
         <div id="links">
             <a  href="${pageContext.request.contextPath}/love?action=rain">
-                <span class="underline-opening">
+                <span class="underline-opening" style="z-index: 300;">
                     Rain
                 </span>
             </a>
         </div>
         <div id="links">
             <a  href="${pageContext.request.contextPath}/love?action=slide">
-                <span class="underline-opening">
+                <span class="underline-opening" style="z-index: 300;">
                     Slide
                 </span>
             </a>

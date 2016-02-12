@@ -107,14 +107,18 @@ samp {
     font-size: 1em
 }
 button,
-input,
 optgroup,
 select,
 textarea {
     color: inherit;
     font: inherit;
-    margin: 0
+    margin: 0;
 }
+
+input {
+    margin: 0;
+}
+
 button {
     overflow: visible
 }

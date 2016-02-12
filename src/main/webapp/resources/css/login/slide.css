@@ -9,7 +9,7 @@ body {
 }
 
 input[type="checkbox"] {
-    background: rgba(255, 0, 0, 10000);
+    background: rgba(255,255,255,.1);
     border-radius: 100%;
     border: 0;
     cursor: pointer;
@@ -20,8 +20,9 @@ input[type="checkbox"] {
     margin-left: -20px;
     width: 40px;
     height: 40px;
+    -webkit-appearance: none;
     appearance: none;
-    outline:0;
+    outline: 0;
     transition: all 0.4s ease-in-out;
     z-index: 1000;
 }
@@ -34,7 +35,7 @@ input[type="checkbox"]:after {
     color: #fff;
     content: '+';
     font-size: 2em;
-    line-height: 41px;
+    line-height: 42px;
     width: 100%;
     height: 100%;
 }

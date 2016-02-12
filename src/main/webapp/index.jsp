@@ -17,8 +17,8 @@
                 margin: 10px;
                 text-align: center;
             }
-            
-            
+
+
             #izq {
                 background: url(${pageContext.request.contextPath}/resources/img/login/vulcano_izq.jpg) no-repeat top right;
             }
@@ -27,62 +27,86 @@
                 background: url(${pageContext.request.contextPath}/resources/img/login/vulcano_der.jpg) no-repeat left top;
                 left:50%;
             }
+            .heart1{
+                animation: heart-anim_1 1s linear .4s infinite;
+            }
+            .heart2{
+                animation: heart-anim_2 3s linear 1.3s infinite;
+            }
+            .heart3{
+                animation: heart-anim_3 2s linear 1.0s infinite;
+            }
+/*            .heart2{
+                animation: pounding .5s linear infinite alternate;
+            }*/
+            .heart1:after, .heart1:before{
+                background-color: #ff7693;
+            }
 
-            /* Most of the heart's CSS came from the Shapes of CSS  */
-            /* http://css-tricks.com/examples/ShapesOfCSS/          */
-            /*            .heart {
-                            position: relative;
-                            width: 100px;
-                            height: 90px;
-                            margin: 30px;
-            
-                            -webkit-transform: scale(1);
-                            -ms-transform: scale(1);
-                            -o-transform: scale(1);
-                            -moz-transform: scale(1);
-                            transform: scale(1);
-                            -webkit-transform-origin: center center;
-                            -moz-transform-origin: center center;
-                            -ms-transform-origin: center center;
-                            -o-transform-origin: center center;
-                            transition: all 1s; 
-                        }*/
+/*            @keyframes pounding{
+                0%{ transform: scale(1.5); }
+                100%{ transform: scale(1); }
+            }*/
+            @keyframes heart-anim_1 {
+                46% {
 
-            /*            .heart:before,
-                        .heart:after { 
-                            position: absolute; 
-                            content: "";
-                            left: 50px;
-                            top: 0;
-                            width: 50px;
-                            height: 80px;
-                            background: red;
-                            -moz-border-radius: 50px 50px 0 0;
-                            border-radius: 50px 50px 0 0;
-                            -webkit-transform: rotate(-45deg);
-                            -moz-transform: rotate(-45deg);
-                            -ms-transform: rotate(-45deg);
-                            -o-transform: rotate(-45deg);
-                            transform: rotate(-45deg);
-                            -webkit-transform-origin: 0 100%;
-                            -moz-transform-origin: 0 100%;
-                            -ms-transform-origin: 0 100%;
-                            -o-transform-origin: 0 100%;
-                            transform-origin: 0 100%;
-                        }
-                        .heart:after {
-                            left: 0;
-                            -webkit-transform: rotate(45deg);
-                            -moz-transform: rotate(45deg);
-                            -ms-transform: rotate(45deg);
-                            -o-transform: rotate(45deg);
-                            transform: rotate(45deg);
-                            -webkit-transform-origin: 100% 100%;
-                            -moz-transform-origin: 100% 100%;
-                            -ms-transform-origin: 100% 100%;
-                            -o-transform-origin: 100% 100%;
-                            transform-origin :100% 100%;
-                        }*/
+                    transform: rotate(10deg) scale(1);
+                }
+                50% {
+                    transform: rotate(5deg) scale(1.3);
+                }
+                52% {
+                    transform: rotate(5deg) scale(1.5);
+                }
+                55% {
+                    opacity: 0.5;
+                    transform: rotate(5deg) scale(3);
+                }
+                100% {
+                    opacity: 0;
+                    transform: rotate(5deg) scale(50);
+                }
+            }
+            @keyframes heart-anim_2 {
+                46% {
+
+                    transform: rotate(0deg) scale(1);
+                }
+                50% {
+                    transform: rotate(-1deg) scale(1.3);
+                }
+                52% {
+                    transform: rotate(-2deg) scale(1.5);
+                }
+                55% {
+                    opacity: 0.5;
+                    transform: rotate(-5deg) scale(3);
+                }
+                100% {
+                    opacity: 0;
+                    transform: rotate(-10deg) scale(50);
+                }
+            }
+            @keyframes heart-anim_3 {
+                46% {
+
+                    transform: rotate(-15deg) scale(1);
+                }
+                50% {
+                    transform: rotate(-20deg) scale(1.3);
+                }
+                52% {
+                    transform: rotate(-20deg) scale(1.5);
+                }
+                55% {
+                    opacity: 0.5;
+                    transform: rotate(-15deg) scale(3);
+                }
+                100% {
+                    opacity: 0;
+                    transform: rotate(-10deg) scale(50);
+                }
+            }
 
         </style>
         <script src="${pageContext.request.contextPath}/resources/js/login/prefixfree.min.js"></script>
@@ -114,6 +138,7 @@
             </div>
             <div id="wings" class="wings" >
                 <div id="heart" class="heart animated css"></div>
+<!--                <div class="heart heart1"></div>-->
                 <div class="belly"></div>
 
                 <div class="feet left"></div>
@@ -170,19 +195,19 @@
             function play() {
                 playHelper(myPlayer, myPlayer_heart);
             }
-            
+
             function stopHelper(player, secondPlayer) {
                 var end = 0.0;
                 var step = 0.1;
                 secondPlayer.volume = end;
                 secondPlayer.play();
                 var timerId = setInterval(function () {
-                    if((player.volume - step) < 0.0) {
+                    if ((player.volume - step) < 0.0) {
                         player.stop();
                     } else {
                         player.volume -= step;
                     }
-                    if((secondPlayer.volume + step) > 1.0) {
+                    if ((secondPlayer.volume + step) > 1.0) {
                         player.stop();
                     } else {
                         secondPlayer.volume += step;
@@ -195,19 +220,19 @@
                     player.stop();
                 }, 2000);
             }
-            
+
             function playHelper(player, secondPlayer) {
                 //начать повторы с интервалом 2 сек
                 var end = 1.0;
                 var step = 0.1;
                 player.play();
                 var timerId = setInterval(function () {
-                     if((player.volume + step) > 1.0) {
+                    if ((player.volume + step) > 1.0) {
                         secondPlayer.stop();
                     } else {
                         player.volume += step;
                     }
-                    if((secondPlayer.volume - step) < 0.0) {
+                    if ((secondPlayer.volume - step) < 0.0) {
                         secondPlayer.stop();
                     } else {
                         secondPlayer.volume -= step;
@@ -217,17 +242,17 @@
                 setTimeout(function () {
                     clearInterval(timerId);
                     player.volume = end;
-                    
+
                     secondPlayer.volume = 0.0;
                     secondPlayer.stop();
                 }, 2000);
             }
-            
+
             function stopEye() {
                 document.getElementsByClassName('eye')[0].classList.remove('animated');
                 document.getElementsByClassName('eye')[1].classList.remove('animated');
             }
-            
+
             function startEye() {
                 document.getElementsByClassName('eye')[0].classList.add('animated');
                 document.getElementsByClassName('eye')[1].classList.add('animated');
@@ -235,52 +260,52 @@
             /*--------------------------------*/
 
             /*var heart = document.getElementsByClassName('heart')[1],
-                    pfx = ["webkit", "moz", "MS", "o", ""],
-                    hovered = false;
-
-            function AnimationListener() {
-                if (hovered)
-                {
-                    heart.classList.remove('animated');
-                    heart.style.webkitTransform = 'scale(2)';
-                    heart.style.MozTransform = 'scale(2)';
-                    heart.style.msTransform = 'scale(2)';
-                    heart.style.OTransform = 'scale(2)';
-                    heart.style.transform = 'scale(2)';
-                }
-            }
-
-            function TransitionListener() {
-                if (!hovered)
-                {
-                    heart.classList.add('animated');
-                }
-            }
-
-            function PrefixedEvent(element, type, callback) {
-                for (var p = 0; p < pfx.length; p++) {
-                    if (!pfx[p])
-                        type = type.toLowerCase();
-                    element.addEventListener(pfx[p] + type, callback, false);
-                }
-            }
-
-            PrefixedEvent(heart, "AnimationIteration", AnimationListener);
-
-            heart.onmouseover = function () {
-                hovered = true;
-            }
-            heart.onmouseout = function () {
-                setTimeout(function () {
-                    hovered = false;
-                }, 500);
-                PrefixedEvent(heart, "TransitionEnd", TransitionListener);
-                heart.style.webkitTransform = 'scale(1)';
-                heart.style.MozTransform = 'scale(1)';
-                heart.style.msTransform = 'scale(1)';
-                heart.style.OTransform = 'scale(1)';
-                heart.style.transform = 'scale(1)';
-            }*/
+             pfx = ["webkit", "moz", "MS", "o", ""],
+             hovered = false;
+             
+             function AnimationListener() {
+             if (hovered)
+             {
+             heart.classList.remove('animated');
+             heart.style.webkitTransform = 'scale(2)';
+             heart.style.MozTransform = 'scale(2)';
+             heart.style.msTransform = 'scale(2)';
+             heart.style.OTransform = 'scale(2)';
+             heart.style.transform = 'scale(2)';
+             }
+             }
+             
+             function TransitionListener() {
+             if (!hovered)
+             {
+             heart.classList.add('animated');
+             }
+             }
+             
+             function PrefixedEvent(element, type, callback) {
+             for (var p = 0; p < pfx.length; p++) {
+             if (!pfx[p])
+             type = type.toLowerCase();
+             element.addEventListener(pfx[p] + type, callback, false);
+             }
+             }
+             
+             PrefixedEvent(heart, "AnimationIteration", AnimationListener);
+             
+             heart.onmouseover = function () {
+             hovered = true;
+             }
+             heart.onmouseout = function () {
+             setTimeout(function () {
+             hovered = false;
+             }, 500);
+             PrefixedEvent(heart, "TransitionEnd", TransitionListener);
+             heart.style.webkitTransform = 'scale(1)';
+             heart.style.MozTransform = 'scale(1)';
+             heart.style.msTransform = 'scale(1)';
+             heart.style.OTransform = 'scale(1)';
+             heart.style.transform = 'scale(1)';
+             }*/
 
 
         </script>

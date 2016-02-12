@@ -388,12 +388,14 @@
     -webkit-transform: rotate(15deg) scale(0.8);
     /*-webkit-transform: scale(1);*/
     transform: rotate(15deg) scale(0.8);
+    z-index: -10;
 }
 .lovely-owl .heart2 {
     right: -90px;
     top: 55px;
     -webkit-transform: scale(0.6);
     transform: scale(0.6);
+    z-index: -10;
 }
 .lovely-owl .heart2:before, .lovely-owl .heart2:after {
     background: lightpink;
@@ -402,6 +404,7 @@
     -webkit-transform: rotate(-15deg) scale(0.6);
     transform: rotate(-15deg) scale(0.6);
     left: -100px;
+    z-index: -10;
 }
 .lovely-owl .heart3:before, .lovely-owl .heart3:after {
     background: crimson;

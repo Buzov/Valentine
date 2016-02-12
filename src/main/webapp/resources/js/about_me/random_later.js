@@ -1,7 +1,11 @@
 function threateningLetter($element) {
     var text = $($element).text();
 
-    var letters = [];
+    //var letters = ['I', "'", 'm', ' ', 'y', 'o', 'u', 'r', ' ', 'm', 'a', 'n', 'i', 'a', 'c', '-', 'e', 'n', 'g', 'i', 'n', 'e', 'e', 'r'];
+    var letters_1 = "I'm your maniac-engineer".split('');
+    var letters_2 = "I love You".split('');
+    
+    var words = [letters_1, letters_2];
 
     var html = "";
 
@@ -14,12 +18,14 @@ function threateningLetter($element) {
             text_transform = ["uppercase", "lowercase"];
 
 
-    for (var i = 0; i < text.length; i++) {
-        if (text[i] != " ") {
-            if (i == 0) {
-                html += randomizerUpperCase(text[i]);
+    var mas = words[Math.floor(Math.random() * words.length)];     
+
+    for (var i = 0; i < mas.length; i++) {
+        if (mas[i] !== " ") {
+            if (i === 0) {
+                html += randomizerUpperCase(mas[i]);
             } else {
-                html += randomizer(text[i]);
+                html += randomizer(mas[i]);
             }
         } else {
 //          html += "<span style='float: left; padding: 10px'> </span>";
